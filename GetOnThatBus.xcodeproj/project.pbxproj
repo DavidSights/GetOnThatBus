@@ -16,6 +16,7 @@
 		9A1A6CBB1B16497600419FD1 /* GetOnThatBusTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A1A6CBA1B16497600419FD1 /* GetOnThatBusTests.m */; };
 		9A1A6CC51B164D7C00419FD1 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9A1A6CC41B164D7C00419FD1 /* MapKit.framework */; };
 		9A1A6CC81B166B8500419FD1 /* DetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A1A6CC71B166B8500419FD1 /* DetailViewController.m */; };
+		9A1A6CCB1B1696DE00419FD1 /* MyPointAnnotation.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A1A6CCA1B1696DE00419FD1 /* MyPointAnnotation.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -45,6 +46,8 @@
 		9A1A6CC41B164D7C00419FD1 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		9A1A6CC61B166B8500419FD1 /* DetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DetailViewController.h; sourceTree = "<group>"; };
 		9A1A6CC71B166B8500419FD1 /* DetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DetailViewController.m; sourceTree = "<group>"; };
+		9A1A6CC91B1696DE00419FD1 /* MyPointAnnotation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyPointAnnotation.h; sourceTree = "<group>"; };
+		9A1A6CCA1B1696DE00419FD1 /* MyPointAnnotation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyPointAnnotation.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -92,6 +95,8 @@
 				9A1A6CA31B16497600419FD1 /* AppDelegate.m */,
 				9A1A6CA51B16497600419FD1 /* ViewController.h */,
 				9A1A6CA61B16497600419FD1 /* ViewController.m */,
+				9A1A6CC91B1696DE00419FD1 /* MyPointAnnotation.h */,
+				9A1A6CCA1B1696DE00419FD1 /* MyPointAnnotation.m */,
 				9A1A6CC61B166B8500419FD1 /* DetailViewController.h */,
 				9A1A6CC71B166B8500419FD1 /* DetailViewController.m */,
 				9A1A6CA81B16497600419FD1 /* Main.storyboard */,
@@ -231,6 +236,7 @@
 				9A1A6CA71B16497600419FD1 /* ViewController.m in Sources */,
 				9A1A6CA41B16497600419FD1 /* AppDelegate.m in Sources */,
 				9A1A6CA11B16497600419FD1 /* main.m in Sources */,
+				9A1A6CCB1B1696DE00419FD1 /* MyPointAnnotation.m in Sources */,
 				9A1A6CC81B166B8500419FD1 /* DetailViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

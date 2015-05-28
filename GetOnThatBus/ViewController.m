@@ -9,6 +9,7 @@
 #import "ViewController.h"
 #import <MapKit/MapKit.h>
 #import "DetailViewController.h"
+#import "MyPointAnnotation.h"
 
 @interface ViewController () <MKMapViewDelegate, UITableViewDataSource, UITableViewDelegate>
 
@@ -36,11 +37,10 @@
 
         NSDictionary *requestedData = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingAllowFragments error:&connectionError];
         self.locations = [requestedData objectForKey:@"row"];
-        NSLog(@"self.locations %@", self.locations);
         [self.tableView reloadData];
 
         for (NSDictionary *location in self.locations){
-            MKPointAnnotation *annotation = [MKPointAnnotation new];
+            MyPointAnnotation *annotation = [MyPointAnnotation new];
             double longitude, latitude;
             latitude = [[location objectForKey:@"latitude"] doubleValue];
             longitude = [[location objectForKey:@"longitude"] doubleValue];
@@ -52,6 +52,7 @@
                 annotation.title = [location objectForKey:@"cta_stop_name"];
                 annotation.subtitle = [location objectForKey:@"routes"];
             }
+            annotation.location = location;
             [self.myMapView addAnnotation:annotation];
             [self.myMapView showAnnotations:self.myMapView.annotations animated:YES];
         }
@@ -71,21 +72,12 @@
     return pin;
 }
 
+
 -(void)mapView:(MKMapView *)mapView annotationView:(MKAnnotationView *)view calloutAccessoryControlTapped:(UIControl *)control {
 
-//    CLLocationCoordinate2D centerCoordinate = view.annotation.coordinate;
-//    MKCoordinateSpan span;
-//    MKCoordinateRegion region;
-//
-//    span.latitudeDelta = 0.001;
-//    span.longitudeDelta = 0.001;
-//    region.center = centerCoordinate;
-//    region.span = span;
-//
-//    [self.myMapView setRegion:region animated:YES];
-
-    [self performSegueWithIdentifier:@"detail" sender:self];
+    [self performSegueWithIdentifier:@"detail" sender:nil];
 }
+
 
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     return self.locations.count;
@@ -99,6 +91,7 @@
     return cell;
 }
 
+
 - (IBAction)mapListControlToggled:(UISegmentedControl *)sender {
     if (sender.selectedSegmentIndex == 0) {
         self.tableView.alpha = 0;
@@ -107,10 +100,12 @@
     }
 }
 
+
 -(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     DetailViewController *destinationVC = segue.destinationViewController;
-//    destinationVC.title = self.myMapView.selectedAnnotations objectAtIndex:<#(NSUInteger)#>;
 
+    MyPointAnnotation *myPoint = self.myMapView.selectedAnnotations.firstObject;
+    destinationVC.location = myPoint.location;
 }
 
 

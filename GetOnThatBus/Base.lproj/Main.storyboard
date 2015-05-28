@@ -94,10 +94,10 @@
             </objects>
             <point key="canvasLocation" x="1392" y="337"/>
         </scene>
-        <!--View Controller-->
+        <!--Detail View Controller-->
         <scene sceneID="PMz-f1-dit">
             <objects>
-                <viewController id="0El-36-cNK" sceneMemberID="viewController">
+                <viewController id="0El-36-cNK" customClass="DetailViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="HHF-yQ-Xrs"/>
                         <viewControllerLayoutGuide type="bottom" id="wNJ-NI-nVk"/>
@@ -105,8 +105,26 @@
                     <view key="view" contentMode="scaleToFill" id="BXl-dc-kia">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Address" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ocP-OC-lbx">
+                                <rect key="frame" x="16" y="72" width="568" height="59"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Routes" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5Xq-as-by2">
+                                <rect key="frame" x="16" y="139" width="568" height="59"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
+                    <connections>
+                        <outlet property="addressLabel" destination="ocP-OC-lbx" id="tDH-SZ-L16"/>
+                        <outlet property="routesLabel" destination="5Xq-as-by2" id="icP-3J-JJb"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2Qg-zr-hnR" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
